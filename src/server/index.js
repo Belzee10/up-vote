@@ -9,6 +9,7 @@ module.exports = () => {
       title: faker.name.title(),
       description: faker.lorem.text(),
       image: faker.image.image(),
+      number: i + 1,
       votes: faker.random.number({
         min: 0,
         max: 20

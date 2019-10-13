@@ -3,8 +3,8 @@
     <v-content>
       <v-container>
         <v-layout row wrap>
-          <v-flex xs1="12">
-            here
+          <v-flex>
+            <articles />
           </v-flex>
         </v-layout>
       </v-container>
@@ -13,9 +13,12 @@
 </template>
 
 <script>
+import Articles from './components/Articles/Articles.vue';
 export default {
   name: 'App',
-
+  components: {
+    Articles
+  },
   data: () => ({
     //
   })

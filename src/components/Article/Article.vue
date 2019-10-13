@@ -6,7 +6,7 @@
           <!-- <v-img :src="image" max-width="100" max-height="100"></v-img> -->
         </v-col>
         <v-col :md="8">
-          some txt sfsdf sadfdfa saasdasd
+          {{ title }}
         </v-col>
         <v-col :md="2">
           <v-btn
@@ -18,7 +18,7 @@
           >
             <v-icon>mdi-star</v-icon>
           </v-btn>
-          <span>{{ votes }}</span>
+          <span class="votes">{{ votes }}</span>
           <v-btn
             icon
             text

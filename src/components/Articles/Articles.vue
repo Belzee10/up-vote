@@ -6,13 +6,17 @@
       md="8"
       offset="2"
     >
-      <Article v-bind="article" />
+      <Article
+        v-bind="article"
+        @up-vote="handleUpVote"
+        @down-vote="handleUpVote"
+      />
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { getArticles } from '../../api/api.js';
+import { getArticles, editArticle } from '../../api/api.js';
 import Article from '../Article/Article.vue';
 
 export default {
@@ -36,6 +40,14 @@ export default {
     getArticles().then(res => {
       this.articles = res;
     });
+  },
+  methods: {
+    handleUpVote({ id, ...rest }) {
+      editArticle(id, rest).then(res => {
+        const index = this.articles.findIndex(item => item.id === res.id);
+        this.articles.splice(index, 1, res);
+      });
+    }
   }
 };
 </script>

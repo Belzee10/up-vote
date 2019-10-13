@@ -95,10 +95,16 @@ export default {
   },
   methods: {
     upVote() {
-      this.$emit('up-vote');
+      this.$emit('up-vote', {
+        ...this.$props,
+        votes: this.votes + 1
+      });
     },
     downVote() {
-      this.$emit('down-vote');
+      this.$emit('down-vote', {
+        ...this.$props,
+        votes: this.votes - 1
+      });
     }
   }
 };

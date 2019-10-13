@@ -42,7 +42,7 @@ describe('Articles.vue', () => {
     });
   });
 
-  test('should render all articles DESC', async () => {
+  test.only('should render all articles DESC', async () => {
     const items = [
       {
         author: {},
@@ -69,7 +69,7 @@ describe('Articles.vue', () => {
       localVue
     });
     await flushPromises();
-    const votes = wrapper.findAll('.votes');
-    expect(votes.at(0).text()).toContain(20);
+    const article = wrapper.findAll(Article);
+    expect(article.at(0).props().votes).toBe(20);
   });
 });

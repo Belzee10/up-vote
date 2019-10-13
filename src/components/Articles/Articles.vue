@@ -1,9 +1,14 @@
 <template>
-  <div>
-    <div v-for="article in getArticles" :key="article.id">
+  <v-row>
+    <v-col
+      v-for="article in orderedArticles"
+      :key="article.id"
+      md="8"
+      offset="2"
+    >
       <Article v-bind="article" />
-    </div>
-  </div>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -19,11 +24,12 @@ export default {
     articles: []
   }),
   computed: {
-    getArticles() {
+    orderedArticles() {
       const newArticles = [...this.articles];
-      return newArticles.sort((a, b) => {
-        return a.votes < b.votes;
+      newArticles.sort((a, b) => {
+        return b.votes - a.votes;
       });
+      return newArticles;
     }
   },
   mounted() {

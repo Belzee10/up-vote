@@ -4,6 +4,9 @@
       <v-container>
         <v-layout row wrap>
           <v-flex>
+            <h2 class="display-1 text-center mt-8 mb-10">
+              Up Vote!
+            </h2>
             <articles />
           </v-flex>
         </v-layout>

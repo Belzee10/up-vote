@@ -1,3 +1,3 @@
 {
-    "*.{js,vue}": ["yarn run lint"]
+    "*.{js,vue}": ["yarn run lint", "jest --findRelatedTests"]
 }

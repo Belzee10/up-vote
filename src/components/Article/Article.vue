@@ -6,7 +6,7 @@
           <!-- <v-img :src="image" max-width="100" max-height="100"></v-img> -->
         </v-col>
         <v-col :md="8">
-          some txt sfsdf
+          some txt sfsdf sadfdfa
         </v-col>
         <v-col :md="2">
           <v-btn
